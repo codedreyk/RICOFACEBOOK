@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+   .post-content {
+            margin-bottom: 10px;
+        }
+        .post-content p {
+            font-size: 16px;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .actions i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .actions .like, .actions .comment, .actions .share {
+            cursor: pointer;
+        }
+        .like-count, .comment-count {
+            font-size: 14px;
+            color: #606770;
+        }
+        .comment-section {
+            margin-top: 10px;
+        }
+        .comment-section input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-top: 5px;
+        }
+        .comments-display {
+            margin-top: 10px;
+        }
+        .comments-display div {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+  navbar .menu-icons {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-icons i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        #container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          align: center;
+        }
+   #profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+   }
+  #navbar {
+            background-color: #3b5998;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+  }
+       
+         
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="memebook.jpg" style="width: 100px;
+            height: 48px;
+            margin-right: 15px;">
+        </div>
+        <div class="menu-icons">
+            <i class="fas fa-home"></i>
+            <i class="fas fa-user-friends"></i>
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-cog"></i>
+        </div>
+    </div>
+  
+  <div class="search-bar">
+            <input type="text" class="search" placeholder="Search Facebook">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="profile">
+            <!-- Profile Picture -->
+            <img id="profilePic" src="default-profile.jpg" alt="Profile Picture">
+            <input type="file" id="uploadProfilePic" style="display: none; border-radiys:50%;">
+            <label for="uploadProfilePic" class="change-pic"><i class="fas fa-camera"></i> Change Pic</label>
+        </div>
+</nav>
+
+  <!-- Post Section -->
+    <div id="container">
+        <!-- Profile Info -->
+             <div class="center">
+        <div id="profile">
+            <img src="rico.jpg" alt="Profile Picture">
+            <div>
+                <strong>Rico Alisaca</strong><br>
+                <span>🔵2 hrs ago</span>
+            </div>
+        </div>
+       <!-- Post Content -->
+        <div class="post-content">
+                 
+            <p> Dakpan ang mga buang HAHAHA😭</p>
+                 <img src="meme2.jpg" style="width: 300px;
+            height: 200px;
+            margin-right: 15px;">
+        </div>
+                      
+
+        <!-- Actions: Like, Comment, Share -->
+        <div class="actions">
+            <div class="like" onclick="likePost()">
+                <i class="fas fa-thumbs-up"></i> Like
+            </div>
+            <div class="comment" onclick="focusCommentBox()">
+                <i class="fas fa-comment"></i> Comment
+            </div>
+            <div class="share" onclick="sharePost()">
+                <i class="fas fa-share"></i> Share
+            </div>
+        </div>
+             </div>
+
+        <!-- Like and Comment Count -->
+        <div class="like-count">
+            <span id="likeCount">100 Likes</span>
+        </div>
+
+        <div class="comment-section">
+            <div class="comment-count">
+                <span id="commentCount">5 Comments</span>
+            </div>
+            <input type="text" id="commentInput" placeholder="Write a comment..." onkeypress="addComment(event)">
+            <div id="commentsDisplay" class="comments-display"></div>
+        </div>
+    </div>
+  <!-- Post Section -->
+    <div id="container">
+        <!-- Profile Info -->
+             <div class="center">
+        <div id="profile">
+            <img src="matt.jpg" alt="Profile Picture">
+            <div>
+                <strong>Matt Manacap</strong><br>
+                <span>🔵Online</span>
+            </div>
+        </div>
+       <!-- Post Content -->
+        <div class="post-content">
+                 
+            <p>Gikapoy nako tabang👹</p>
+                 <img src="meme1.jpg" style="width: 300px;
+            height: 200px;
+            margin-right: 15px;">
+        </div>
+                      
+
+        <!-- Actions: Like, Comment, Share -->
+        <div class="actions">
+            <div class="like" onclick="likePost()">
+                <i class="fas fa-thumbs-up"></i> Like
+            </div>
+            <div class="comment" onclick="focusCommentBox()">
+                <i class="fas fa-comment"></i> Comment
+            </div>
+            <div class="share" onclick="sharePost()">
+                <i class="fas fa-share"></i> Share
+            </div>
+        </div>
+             </div>
+
+        <!-- Like and Comment Count -->
+        <div class="like-count">
+            <span id="likeCount">50 Likes</span>
+        </div>
+
+        <div class="comment-section">
+            <div class="comment-count">
+                <span id="commentCount">20 Comments</span>
+            </div>
+            <input type="text" id="commentInput" placeholder="Write a comment..." onkeypress="addComment(event)">
+            <div id="commentsDisplay" class="comments-display"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+                 <div class="left">
+            <ul>
+                <li><i class="fas fa-home"></i> News Feed</li>
+                <li><i class="fas fa-envelope"></i> Messages</li>
+                <li><i class="fas fa-calendar"></i> Events</li>
+                <li><i class="fas fa-users"></i> Groups</li>
+            </ul>
+                 </div>
+        </aside>
+
+       
+
+            <!-- Dynamic Feed -->
+            <div class="feed" id="feed">
+                <!-- Posts will appear here dynamically -->
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div>Friends Online</div>
+            <ul>
+                <li><i class="fas fa-user"></i> Friend 1</li>
+                <li><i class="fas fa-user"></i> Friend 2</li>
+                <li><i class="fas fa-user"></i> Friend 3</li>
+            </ul>
+        </aside>
+    </div>
+  <!-- My Day Section -->
+<div class="my-day">
+    <button id="addMyDayButton"><i class="fas fa-plus-circle"></i> Add My Day</button>
+    <div class="my-day-content">
+        <!-- Stories will be displayed here -->
+    </div>
+</div>
+
+
+    <script src="app.js"></script>
+   <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        let likeCount = 0;
+        let commentCount = 0;
+
+        // Function to handle "Like" button
+        function likePost() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount + ' Likes';
+        }
+
+        // Function to handle adding a comment
+        function addComment(event) {
+            if (event.key === 'Enter') {
+                let commentInput = document.getElementById('commentInput');
+                let commentText = commentInput.value.trim();
+                if (commentText !== '') {
+                    let commentsDisplay = document.getElementById('commentsDisplay');
+                    let commentDiv = document.createElement('div');
+                    commentDiv.innerText = commentText;
+                    commentsDisplay.appendChild(commentDiv);
+
+                    // Clear the input field and update comment count
+                    commentInput.value = '';
+                    commentCount++;
+                    document.getElementById('commentCount').innerText = commentCount + ' Comments';
+                }
+            }
+        }
+
+        // Function to focus the comment input box when "Comment" is clicked
+        function focusCommentBox() {
+            document.getElementById('commentInput').focus();
+        }
+
+        // Function to simulate "Share" button functionality
+        function sharePost() {
+            alert('Post shared!');
+        }
+    </script>
+
+</body>
+</html>
